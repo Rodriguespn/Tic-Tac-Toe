@@ -93,7 +93,7 @@ void computerMove(int **board) {
         for (int j = 0; j < 3; j++){
             if(board[i][j] == empty) {
                 board[i][j] = player2;
-                int tempScore = -minimax(board, player1);
+                int tempScore = -minimax(board, -2, 2, player1);
                 board[i][j] = empty;
                 if(tempScore > score) {
                     score = tempScore;
@@ -107,7 +107,7 @@ void computerMove(int **board) {
     board[x][y] = player2;
 }
 
-int minimax(int **board, int player) {
+int minimax(int **board, int alpha, int beta, int player) {
     //How is the position like for player (their turn) on board?
     int winner = checkWinner(board);
     if(winner != tie) return winner*player;
@@ -118,12 +118,15 @@ int minimax(int **board, int player) {
         for (int j = 0; j < 3; j++) {
             if(board[i][j] == empty) {//If legal,
                 board[i][j] = player;//Try the move
-                int thisScore = -minimax(board, player*-1);
+                int thisScore = -minimax(board, alpha, beta, player*-1);
                 if(thisScore > score) {
                     score = thisScore;
                     move = i;
                 }//Pick the one that's worst for the opponent
                 board[i][j] = empty;//Reset board after try
+                if (score <= alpha) return score;
+                if (score < beta)
+                    beta = score;
             }
         }
     }

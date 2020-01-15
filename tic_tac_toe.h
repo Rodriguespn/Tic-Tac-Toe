@@ -14,7 +14,7 @@ int ** newBoard();
 int checkCoord(int coord);
 void playerMove(int ** board, int player, int i, int j);
 void computerMove(int **board);
-int minimax(int **board, int player);
+int minimax(int **board, int alpha, int beta, int player);
 int checkWinner(int **board);
 int checkLines(int **board);
 int checkColumns(int **board);
