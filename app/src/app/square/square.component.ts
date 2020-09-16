@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./square.component.scss']
 })
 export class SquareComponent {
-  @Input() value: 'X' | 'O'
+  @Input() value: 'X' | 'O';
 }
