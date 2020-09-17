@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-A webapp with a friendly game of tic-tac-toe.
+An angular webapp with a friendly game of tic-tac-toe.
 
 Please, feel free to contribute to this project.
 
