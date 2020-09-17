@@ -1,10 +1,10 @@
-<h1>Current Player: {{ player }}</h1>
-
 <button (click)="newGame()">Start a new game</button>
 
-<h2 *ngIf="winner">
+<p [className]="'player-turn'">Current Player: <b>{{ player }}</b></p>
+
+<p [className]="'winner-header'" *ngIf="winner">
     Player {{ winner }} won the game!
-</h2>
+</p>
 
 <main> 
     <app-square 
