@@ -1,3 +1,6 @@
 /*ignores all executable files*/
 *.out
 *.exe
+
+idea/
+.vscode/

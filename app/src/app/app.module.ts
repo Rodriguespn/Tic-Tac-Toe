@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SquareComponent } from './square/square.component';
 import { BoardComponent } from './board/board.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,11 +14,12 @@ import { BoardComponent } from './board/board.component';
     SquareComponent,
     BoardComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    RouterModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        RouterModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
