@@ -2,6 +2,15 @@
     font-size: x-large;
 }
 
+button {
+    background-color: inherit;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid;
+    cursor: pointer;
+    font-weight: bold;
+}
+
 .winner-header {
     font-size: large;
     font-weight: bold;
