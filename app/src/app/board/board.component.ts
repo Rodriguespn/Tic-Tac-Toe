@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-board',
@@ -7,15 +8,41 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class BoardComponent implements OnInit {
+  myForm: FormGroup;
+  begin: boolean = false;
+
   squares: any[];
   xIsNext: boolean;
   winner: string;
 
+  constructor(private fb: FormBuilder) {}
+
   ngOnInit(): void {
-    this.newGame();
+    this.myForm = this.fb.group({
+      playerOne: ['Player1', [
+        Validators.required,
+        Validators.maxLength(15)
+      ]],
+      playerTwo: ['Player2',[
+        Validators.required,
+        Validators.maxLength(15)
+      ]]
+    })
+  }
+
+  get playerOne() {
+    return this.myForm.get('playerOne');
+  }
+
+  get playerTwo() {
+    return this.myForm.get('playerTwo');
   }
 
   newGame(): void {
+    this.begin=true;
+    const formValue = this.myForm.value;
+    console.log()
+
     this.squares = Array(9).fill(null);
     this.winner = null;
     this.xIsNext = true;
@@ -23,6 +50,10 @@ export class BoardComponent implements OnInit {
 
   get player(): string{
     return this.xIsNext ? 'X' : 'O';
+  }
+
+  currentPlayer(): string {
+    return this.player=='X' ? this.playerOne.value : this.playerTwo.value;
   }
 
   makeMove(idx: number): void {
@@ -52,7 +83,11 @@ export class BoardComponent implements OnInit {
         this.squares[a] === this.squares[b] &&
         this.squares[a] === this.squares[c]
       ) {
-        return this.squares[a];
+        if (this.squares[a] == 'X')
+          return this.playerOne.value;
+        else {
+          return this.playerTwo.value; 
+        }
       }
     }
     return null;

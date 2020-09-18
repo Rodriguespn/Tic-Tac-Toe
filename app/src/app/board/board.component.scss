@@ -1,20 +1,32 @@
+form {
+    padding-top: 40vh;
+}
+
+mat-form-field {
+    margin: 0 20px;
+}
+
+input {
+    font-size: 26px;
+}
+
 .player-turn {
     font-size: x-large;
 }
 
-button {
+.button {
     background-color: inherit;
-    color: white;
-    padding: 10px 20px;
-    border: 2px solid;
+    color: inherit;
     cursor: pointer;
+    padding: 10px 20px;
     font-weight: bold;
 }
 
 .winner-header {
-    font-size: large;
+    font-size: 40px;
     font-weight: bold;
     text-align: center;
+    padding: 20px 0;
 }
 
 main {

@@ -1,25 +1,32 @@
-<form>
-  <div class="form-group">
-    <label for="playerOne">Player1</label>
-    <input ngModel name="playerOne" #playerOne="ngModel" id="playerOne" type="text" class="form-control">
-    <div class="alert alert-danger" [hidden]="!playerOne.touched && playerOne.valid">Player1's name is required.</div>
-  </div>
-  <div class="form-group">
-    <label for="playerTwo">Player2</label>
-    <input ngModel name="playerTwo" type="text" #playerTwo="ngModel" id="playerTwo">
-    <div class="alert alert-danger" [hidden]="!playerTwo.touched && playerTwo.valid">Player2's name is required.</div>
-  </div>
-  <button class="btn btn-primary">Play</button>
+<form [formGroup]="myForm" [hidden]="begin" (ngSubmit)="newGame()">
+  <mat-form-field>
+    <input matInput placeholder="Player1" formControlName="playerOne">
+
+    <mat-error *ngIf="playerOne.invalid && playerOne.touched">
+      Player 1 must have a name.
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Player2" formControlName="playerTwo">
+
+    <mat-error *ngIf="playerOne.invalid && playerOne.touched">
+      Player 2 must have a name.
+    </mat-error>
+  </mat-form-field>
+
+  <br>
+
+  <button mat-raised-button [disabled]="myForm.invalid">Play</button>
 </form>
 
-<div [hidden]="1">
+<div [hidden]="!begin">
   <div>
-      <h2 [className]="'player-turn'">Current Player: {{ player }}</h2>
-      <button (click)="newGame()">Start a new game</button>
+      <h2 [className]="'player-turn'">Current Player: {{ currentPlayer() }}</h2>
+      <button mat-raised-button (click)="newGame()">Start a new game</button>
   </div>
 
   <p [className]="'winner-header'" *ngIf="winner">
-      Player {{ winner }} won the game!
+      {{ winner }} won the game!
   </p>
 
   <main>
