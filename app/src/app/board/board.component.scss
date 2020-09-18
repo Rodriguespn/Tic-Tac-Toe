@@ -14,16 +14,13 @@ input {
     font-size: x-large;
 }
 
-.button {
-    background-color: inherit;
-    color: inherit;
+button {
     cursor: pointer;
-    padding: 10px 20px;
-    font-weight: bold;
+    margin: 10px;
 }
 
 .winner-header {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
     padding: 20px 0;

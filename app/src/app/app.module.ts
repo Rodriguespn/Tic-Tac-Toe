@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SquareComponent } from './square/square.component';
 import { BoardComponent } from './board/board.component';
@@ -24,8 +23,6 @@ import { MatChipsModule } from '@angular/material/chips';
   ],
     imports: [
         BrowserModule,
-        AppRoutingModule,
-        RouterModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
         MatInputModule,

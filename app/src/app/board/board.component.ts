@@ -19,11 +19,11 @@ export class BoardComponent implements OnInit {
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
-      playerOne: ['Player1', [
+      playerOne: ['', [
         Validators.required,
         Validators.maxLength(15)
       ]],
-      playerTwo: ['Player2',[
+      playerTwo: ['',[
         Validators.required,
         Validators.maxLength(15)
       ]]

@@ -22,7 +22,9 @@
 <div [hidden]="!begin">
   <div>
       <h2 [className]="'player-turn'">Current Player: {{ currentPlayer() }}</h2>
-      <button mat-raised-button (click)="newGame()">Start a new game</button>
+      <button mat-raised-button (click)="newGame()">New game</button>
+      <br>
+      <button mat-raised-button (click)="begin=!begin">Back</button>
   </div>
 
   <p [className]="'winner-header'" *ngIf="winner">
