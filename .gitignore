@@ -2,5 +2,5 @@
 *.out
 game.exe
 
-idea/
+.idea/
 .vscode/
