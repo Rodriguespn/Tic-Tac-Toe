@@ -30,8 +30,12 @@
       <button mat-raised-button (click)="begin=!begin">Back</button>
   </div>
 
-  <p [className]="'winner-header'" *ngIf="winner">
+  <p [className]="'winner-header'" *ngIf="winner && winner !== 'tie'">
       {{ winner }} won the game!
+  </p>
+
+  <p [className]="'winner-header'" *ngIf="winner && winner === 'tie'">
+    The game ended tied!
   </p>
 
   <main>

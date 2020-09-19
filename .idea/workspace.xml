@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b2bc6f0-7748-4e7d-8b80-a65d86c2e4a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Tic-Tac-Toe.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Tic-Tac-Toe/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tic-Tac-Toe/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Tic-Tac-Toe/main.21258d2c5531ef8d5b0f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Tic-Tac-Toe/runtime.0dd72bba6ffdf72407d1.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app/board/board.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/board/board.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app/board/board.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/board/board.component.ts" afterDir="false" />
     </list>
@@ -15,6 +14,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600517040402</updated>
-      <workItem from="1600517043363" duration="3416000" />
+      <workItem from="1600517043363" duration="9883000" />
     </task>
     <servers />
   </component>
