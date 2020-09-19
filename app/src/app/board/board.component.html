@@ -6,13 +6,16 @@
       Player 1 must have a name.
     </mat-error>
   </mat-form-field>
-  <mat-form-field>
-    <input matInput placeholder="Player2" formControlName="playerTwo">
 
-    <mat-error *ngIf="playerOne.invalid && playerOne.touched">
-      Player 2 must have a name.
-    </mat-error>
-  </mat-form-field>
+  <div [hidden]="!twoPlayersGame.value">
+    <mat-form-field>
+      <input matInput placeholder="Player2" formControlName="playerTwo">
+    </mat-form-field>
+  </div>
+
+  <br>
+
+  <mat-checkbox formControlName="twoPlayersGame">2 Players</mat-checkbox>
 
   <br>
 

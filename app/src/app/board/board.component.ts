@@ -23,11 +23,11 @@ export class BoardComponent implements OnInit {
         Validators.required,
         Validators.maxLength(15)
       ]],
-      playerTwo: ['',[
-        Validators.required,
+      playerTwo: ['', [
         Validators.maxLength(15)
-      ]]
-    })
+      ]],
+      twoPlayersGame: [true]
+    });
   }
 
   get playerOne() {
@@ -38,10 +38,20 @@ export class BoardComponent implements OnInit {
     return this.myForm.get('playerTwo');
   }
 
+  get twoPlayersGame() {
+    return this.myForm.get('twoPlayersGame');
+  }
+
   newGame(): void {
-    this.begin=true;
-    const formValue = this.myForm.value;
-    console.log()
+    this.begin = true;
+
+    if (!this.twoPlayersGame.value) {
+      this.playerTwo.setValue('Computer');
+    }
+
+    else if (this.playerTwo.value === '') {
+      this.playerTwo.setValue('Player2');
+    }
 
     this.squares = Array(9).fill(null);
     this.winner = null;
@@ -53,11 +63,11 @@ export class BoardComponent implements OnInit {
   }
 
   currentPlayer(): string {
-    return this.player=='X' ? this.playerOne.value : this.playerTwo.value;
+    return this.player === 'X' ? this.playerOne.value : this.playerTwo.value;
   }
 
   makeMove(idx: number): void {
-    if (!this.squares[idx]) {
+    if (!this.squares[idx] && this.winner === null) {
       this.squares.splice(idx, 1, this.player);
       this.xIsNext = !this.xIsNext;
     }
@@ -83,10 +93,11 @@ export class BoardComponent implements OnInit {
         this.squares[a] === this.squares[b] &&
         this.squares[a] === this.squares[c]
       ) {
-        if (this.squares[a] == 'X')
+        if (this.squares[a] === 'X') {
           return this.playerOne.value;
+        }
         else {
-          return this.playerTwo.value; 
+          return this.playerTwo.value;
         }
       }
     }

@@ -119,11 +119,13 @@ int minimax(int **board, int alpha, int beta, int player) {
             if(board[i][j] == empty) {//If legal,
                 board[i][j] = player;//Try the move
                 int thisScore = -minimax(board, alpha, beta, player*-1);
+                //Pick the one that's worst for the opponent
                 if(thisScore > score) {
                     score = thisScore;
                     move = i;
-                }//Pick the one that's worst for the opponent
-                board[i][j] = empty;//Reset board after try
+                }
+                //Reset board after try
+                board[i][j] = empty;
                 if (score <= alpha) return score;
                 if (score < beta)
                     beta = score;
