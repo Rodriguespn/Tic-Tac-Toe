@@ -1,26 +1,32 @@
-<form [formGroup]="myForm" [hidden]="begin" (ngSubmit)="newGame()">
-  <mat-form-field>
-    <input matInput placeholder="Player1" formControlName="playerOne">
+<div [hidden]="begin">
+  <h1 [className]="'title'">Welcome to TIC-TAC-TOE!</h1>
 
-    <mat-error *ngIf="playerOne.invalid && playerOne.touched">
-      Player 1 must have a name.
-    </mat-error>
-  </mat-form-field>
-
-  <div [hidden]="!twoPlayersGame.value">
+  <form [formGroup]="myForm" (ngSubmit)="newGame()">
+    <h3>You can player against the computer or with a friend if you select the "2 Players" option.
+    </h3>
     <mat-form-field>
-      <input matInput placeholder="Player2" formControlName="playerTwo">
+      <input matInput placeholder="Player1" formControlName="playerOne">
+
+      <mat-error *ngIf="playerOne.invalid && playerOne.touched">
+        Player 1 must have a name.
+      </mat-error>
     </mat-form-field>
-  </div>
 
-  <br>
+    <div [hidden]="!twoPlayersGame.value">
+      <mat-form-field>
+        <input matInput placeholder="Player2" formControlName="playerTwo">
+      </mat-form-field>
+    </div>
 
-  <mat-checkbox formControlName="twoPlayersGame">2 Players</mat-checkbox>
+    <br>
 
-  <br>
+    <mat-checkbox formControlName="twoPlayersGame">2 Players</mat-checkbox>
 
-  <button mat-raised-button [disabled]="myForm.invalid">Play</button>
-</form>
+    <br>
+
+    <button mat-raised-button [disabled]="myForm.invalid">Play</button>
+  </form>
+</div>
 
 <div [hidden]="!begin">
   <div>

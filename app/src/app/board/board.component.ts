@@ -180,11 +180,11 @@ export class BoardComponent implements OnInit {
           }
         }
       }
-      if (move === -1) { return minmaxConst.tie; }
+      if (move === -1) { return minmaxConst['tie']; }
       return score;
     }
 
-    let x = -1;
+    let pos = -1;
     let score = -2;
     const board = new Array(9);
     for (let i = 0; i < this.squares.length; ++i) {
@@ -199,11 +199,11 @@ export class BoardComponent implements OnInit {
         board.splice(i, 1, null);
         if (tempScore > score) {
           score = tempScore;
-          x = i;
+          pos = i;
         }
       }
     }
     // returns a score based on minimax tree at a given node.
-    this.setPositionValue(x, 'O');
+    this.setPositionValue(pos, 'O');
   }
 }
